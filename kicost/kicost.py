@@ -107,6 +107,7 @@ from .farnell.farnell import get_farnell_price_tiers, get_farnell_part_num, get_
 # to refer to part numbers, vendor numbers, and such.
 field_name_translations = {
     'mpn': 'manf#',
+    'Mfg_Part_No': 'manf#',
     'pn': 'manf#',
     'manf_num': 'manf#',
     'manf-num': 'manf#',

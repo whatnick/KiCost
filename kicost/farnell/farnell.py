@@ -36,7 +36,7 @@ except ImportError:
     from urllib import urlencode
     from urllib2 import urlopen, Request
     
-from ..kicost import PartHtmlError, FakeBrowser
+from ..kicost import PartHtmlError, FakeBrowser, logger
 
 from currency_converter import CurrencyConverter
 
@@ -158,7 +158,7 @@ def get_farnell_part_html_tree(dist, pn, extra_search_terms='', url=None, descen
             html = response.read()
             break
         except WEB_SCRAPE_EXCEPTIONS:
-            #logger.log(DEBUG_DETAILED,'Exception while web-scraping {} from {}'.format(pn, dist))
+            logger.log(DEBUG_DETAILED,'Exception while web-scraping {} from {}'.format(pn, dist))
             pass
     else: # Couldn't get a good read from the website.
         raise PartHtmlError
